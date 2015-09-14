@@ -28,11 +28,10 @@ object test2 {
   //import sqlContext1._
 
     sqlContext1.sql("CREATE  TABLE IF NOT EXISTS sample (key INT,name String) ROW FORMAT DELIMITED FIELDS TERMINATED BY ','" )
-     sqlContext1.sql("LOAD DATA LOCAL INPATH 'file:///C:/Users/abhishek/workspace/test12/inp.txt' INTO TABLE test13")
+     sqlContext1.sql("LOAD DATA LOCAL INPATH 'file:///C:/Users/abhishek/workspace/test12/inp.txt' INTO TABLE sample")
 
     // Queries are expressed in HiveQL
    sqlContext1.sql("select * from sample").collect().foreach(println)
-
     //saving as avro format using dataframe
 
     val df = sqlContext1.sql("select * from sample")
